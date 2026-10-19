@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi Maré | Culinária Japonesa</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #f5f0e8;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #080808;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #b89652;
+    }
+
+    .logo {
+      color: #d6b66e;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    nav a {
+      color: #f5f0e8;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #d6b66e;
+    }
+
+    .hero {
+      min-height: 480px;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        linear-gradient(#0009, #000b),
+        url("https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero h1 {
+      color: #e0bd70;
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 7vw, 68px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: #c5a15a;
+      color: #111;
+      padding: 12px 25px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background: #e4c77f;
+    }
+
+    section {
+      padding: 65px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #d6b66e;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .sobre p {
+      max-width: 720px;
+      margin: auto;
+      color: #ddd;
+    }
+
+    .cardapio {
+      background: #191919;
+    }
+
+    .pratos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 35px;
+    }
+
+    .prato {
+      background: #222;
+      border: 1px solid #443820;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: left;
+      padding-bottom: 20px;
+    }
+
+    .prato img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .prato h3 {
+      color: #e0bd70;
+      margin: 15px 15px 5px;
+    }
+
+    .prato p {
+      color: #ccc;
+      margin: 0 15px 10px;
+    }
+
+    .preco {
+      color: #e0bd70;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 15px;
+    }
+
+    .visita p {
+      margin: 8px 0;
+    }
+
+    footer {
+      background: #080808;
+      border-top: 1px solid #443820;
+      color: #bbb;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">SUSHI MARÉ</div>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#visite">Visite-nos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <h1>Sushi Maré</h1>
+      <p>O sabor do Japão em cada detalhe.</p>
+      <a class="botao" href="#cardapio">Conheça nosso cardápio</a>
+    </section>
+
+    <section class="sobre" id="sobre">
+      <h2>Sobre nós</h2>
+      <p>
+        No Sushi Maré, cada detalhe é pensado para proporcionar
+        uma experiência especial. Nossa proposta é unir sabores
+        inspirados na culinária japonesa, apresentação cuidadosa
+        e um ambiente elegante e acolhedor.
+        Venha compartilhar bons momentos conosco!
+      </p>
+    </section>
+
+    <section class="cardapio" id="cardapio">
+      <h2>Nosso cardápio</h2>
+      <p>Descubra alguns dos nossos sabores.</p>
+
+      <div class="pratos" id="lista-pratos"></div>
+    </section>
+
+    <section class="visita" id="visite">
+      <h2>Visite o Sushi Maré</h2>
+      <p>Será um prazer receber você!</p>
+      <p><strong>Endereço:</strong> Adicione o endereço do restaurante</p>
+      <p><strong>Horário:</strong> Adicione os dias e horários</p>
+      <p><strong>Telefone:</strong> Adicione o contato</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="ano"></span> Sushi Maré.</p>
+    <p>O sabor do Japão em cada detalhe.</p>
+  </footer>
+
+  <script>
+    // Pratos de exemplo: altere os nomes e preços aqui.
+    const pratos = [
+      {
+        nome: "Salmão Nigiri",
+        descricao: "Arroz temperado com salmão.",
+        preco: 22.00,
+        imagem: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        nome: "Uramaki de Salmão",
+        descricao: "Sushi enrolado com arroz por fora.",
+        preco: 28.00,
+        imagem: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        nome: "Sashimi",
+        descricao: "Fatias de peixe servidas sem arroz.",
+        preco: 32.00,
+        imagem: "https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    const lista = document.getElementById("lista-pratos");
+
+    pratos.forEach((prato) => {
+      const card = document.createElement("article");
+      card.className = "prato";
+
+      const imagem = document.createElement("img");
+      imagem.src = prato.imagem;
+      imagem.alt = prato.nome;
+      imagem.loading = "lazy";
+
+      const titulo = document.createElement("h3");
+      titulo.textContent = prato.nome;
+
+      const descricao = document.createElement("p");
+      descricao.textContent = prato.descricao;
+
+      const preco = document.createElement("div");
+      preco.className = "preco";
+      preco.textContent = prato.preco.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+
+      card.append(imagem, titulo, descricao, preco);
+      lista.appendChild(card);
+    });
+
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
