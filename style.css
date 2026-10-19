@@ -1,0 +1,210 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #f5f0e8;
+  line-height: 1.6;
+}
+
+/* CABEÇALHO */
+header {
+  background: #080808;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 1px solid #b89652;
+}
+
+.logo {
+  color: #d6b66e;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #f5f0e8;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #d6b66e;
+}
+
+/* CAPA */
+.hero {
+  min-height: 480px;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background:
+    linear-gradient(#0009, #000b),
+    url("https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1600&q=80")
+    center / cover;
+}
+
+.hero h1 {
+  color: #e0bd70;
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 7vw, 68px);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 19px;
+  margin-bottom: 28px;
+}
+
+/* BOTÃO */
+.botao {
+  display: inline-block;
+  background: #c5a15a;
+  color: #111;
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botao:hover {
+  background: #e4c77f;
+}
+
+/* SEÇÕES */
+section {
+  padding: 65px 8%;
+  text-align: center;
+}
+
+section h2 {
+  color: #d6b66e;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+/* SOBRE */
+.sobre p {
+  max-width: 720px;
+  margin: auto;
+  color: #ddd;
+}
+
+/* CARDÁPIO */
+.cardapio {
+  background: #191919;
+}
+
+.pratos {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 24px;
+  margin-top: 35px;
+}
+
+/* CARTÕES DOS PRATOS */
+.prato {
+  background: #222;
+  border: 1px solid #443820;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  padding-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.prato:hover {
+  transform: translateY(-5px);
+}
+
+.prato img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.prato h3 {
+  color: #e0bd70;
+  margin: 15px 15px 5px;
+}
+
+.prato p {
+  color: #ccc;
+  margin: 0 15px 10px;
+}
+
+.preco {
+  color: #e0bd70;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+/* CONTATO E VISITA */
+.visita p {
+  margin: 8px 0;
+}
+
+/* RODAPÉ */
+footer {
+  background: #080808;
+  border-top: 1px solid #443820;
+  color: #bbb;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 45px 6%;
+  }
+
+  .hero {
+    min-height: 380px;
+  }
+}
